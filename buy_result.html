@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    purchas Result
+{% endblock %}
+
+{% block main %}
+
+           <h4>Bought!</h4>
+           <p>CASH before buying {{ usercash | usd }}</p>
+           <hr>
+           <table style="width:100%">
+              <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+              </tr>
+               <tr>
+                 <td>{{ stocksymbol }}</td>
+                 <td>{{ name }}</td>
+                 <td>{{ number }}</td>
+                 <td>{{ stockprice }}</td>
+                 <td>{{ totalprice }}</td>
+               </tr>
+               <tr>
+                   <td>CASH</td>
+                   <td> </td>
+                   <td> </td>
+                   <td> </td>
+                   <td>{{ remainingcash | usd }}</td>
+               </tr>
+           </table>
+           <button class="btn btn-warning" type="submit"><a href=/>index</a></button>
+
+{% endblock %}

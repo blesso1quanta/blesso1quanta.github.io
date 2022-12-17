@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    history
+{% endblock %}
+
+{% block main %}
+
+           <h4>Stocks history</h4>
+           <hr>
+           <table style="width:100%">
+              <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transaction</th>
+              </tr>
+              {% for i in length %}
+                      <tr>
+                        <td>{{ htmlsymbol[i] }}</td>
+                        <td>{{ htmlshares[i] }}</td>
+                        <td>{{ htmlcurrentprice[i] }}</td>
+                        <td>{{ transactions[i] }}</td>
+                      </tr>
+               {% endfor %}
+           </table>
+           <hr>
+           <button class="btn btn-warning" type="submit"><a href=/>index</a></button>
+
+{% endblock %}

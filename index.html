@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+
+           <h4>Stocks owned!</h4>
+           <hr>
+           <table style="width:100%">
+              <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+              </tr>
+              {% for i in length %}
+                      <tr>
+                        <td>{{ htmlsymbol[i] }}</td>
+                        <td>{{ htmlname[i] }}</td>
+                        <td>{{ htmlshares[i] }}</td>
+                        <td>{{ htmlcurrentprice[i] }}</td>
+                      </tr>
+               {% endfor %}
+               <tr>
+                   <td>usercash</td>
+                   <td> </td>
+                   <td> </td>
+                   <td>{{ indexusercash | usd}}</td>
+               </tr>
+                <tr>
+                   <td>sellinggain</td>
+                   <td> </td>
+                   <td> </td>
+                   <td>{{ htmlgain | usd}}</td>
+               </tr>
+           </table>
+
+{% endblock %}
